@@ -16,32 +16,61 @@
 int getFirstExpress(int hour, int minutes){
     const int atSix[] = {10, 22, 31, 41, 51, 54};
     const int atSeven[] = {1, 6, 12, 17, 20, 25, 31, 34, 36, 41, 47, 52, 56};
+    const int atEight[] = {1, 3, 6};
 
-    const int arrivedStationTime = minutes + 10;
-    
+
+    bool isNextTime = false;  
+    int arrivedStationTime = minutes + 10;
+    if(arrivedStationTime > 60) {
+      arrivedStationTime = arrivedStationTime - 60;
+      isNextTime = true;
+      }
+
     if(hour == 6){
         const int lenghtAtSix = sizeof(atSix)/sizeof(atSix[0]);
         int time;
+
+      if(!isNextTime){
         for (size_t i = 0; i < lenghtAtSix; i++) {
           int timeDelta = atSix[i] - arrivedStationTime;
           if(timeDelta>0) {
               time = atSix[i];
-          }
+              std::cout << 6 << ":"<< time << std::endl;
+              return 0;
+          };
         };
-        std::cout << 6 << ":"<< time << std::endl;
+      }
+
     }
 
-    if(hour == 7){
+    if(hour == 7 || (hour== 6 && isNextTime)){
         const int lenghtAtSevnen = sizeof(atSeven)/sizeof(atSeven[0]);
         int time;
         for (size_t i = 0; i < lenghtAtSevnen; i++) {
           int timeDelta = atSeven[i] - arrivedStationTime;
           if(timeDelta>0) { 
-            time = atSeven[i];}
+            time = atSeven[i];
+            std::cout << 7 << ":"<< time << std::endl;
+            return 0;
+            };
         };
-      std::cout << 7 << ":"<< time << std::endl;
-    }
-}
+    };
+
+    if(hour == 8 || (hour == 7 && isNextTime)){
+      const int lenghtAtEight = sizeof(atEight)/sizeof(atEight[0]);
+      int time;
+      for (size_t i = 0; i < lenghtAtEight; i++) {
+        int timeDelta = atEight[i] - arrivedStationTime;
+        if(timeDelta>0) { 
+          time = atEight[i];
+          std::cout << 8 << ":"<< time << std::endl;
+          return 0;
+        };
+      };
+      std::cout <<"遅刻しそうです!"<< std::endl;
+    };
+    return 0;
+  };
 
 
 

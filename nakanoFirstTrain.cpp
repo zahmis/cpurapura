@@ -11,7 +11,6 @@ using namespace std;
 // 6 ~ 8 時の時刻表の配列
 // 始業時刻に遅れないように...
 
-
 int getFirstExpress(int hour, int minutes){
     const int atSix[] = {10, 22, 31, 41, 51, 54};
     const int atSeven[] = {1, 6, 12, 17, 20, 25, 31, 34, 36, 41, 47, 52, 56};
@@ -70,9 +69,6 @@ int getFirstExpress(int hour, int minutes){
     };
     return 0;
   };
-
-
-
 
 int main() {
 

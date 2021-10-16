@@ -1,6 +1,5 @@
-#include <iostream>
-#include <math.h>
-
+#include <bits/stdc++.h>
+using namespace std;
 // 駅の時刻表から何時の列車が始発かを計算する関数を作ろう
 // 配列で時刻表を渡して、
 // 家出る時間を入力する。そこから駅までの時間を計算し、最も近い始発を算出するというものを作ろう
@@ -35,7 +34,7 @@ int getFirstExpress(int hour, int minutes){
           int timeDelta = atSix[i] - arrivedStationTime;
           if(timeDelta>0) {
               time = atSix[i];
-              std::cout << 6 << ":"<< time << std::endl;
+              cout << 6 << ":"<< time << endl;
               return 0;
           };
         };
@@ -50,7 +49,7 @@ int getFirstExpress(int hour, int minutes){
           int timeDelta = atSeven[i] - arrivedStationTime;
           if(timeDelta>0) { 
             time = atSeven[i];
-            std::cout << 7 << ":"<< time << std::endl;
+            cout << 7 << ":"<< time << endl;
             return 0;
             };
         };
@@ -63,11 +62,11 @@ int getFirstExpress(int hour, int minutes){
         int timeDelta = atEight[i] - arrivedStationTime;
         if(timeDelta>0) { 
           time = atEight[i];
-          std::cout << 8 << ":"<< time << std::endl;
+          cout << 8 << ":"<< time << endl;
           return 0;
         };
       };
-      std::cout <<"遅刻しそうです!"<< std::endl;
+      cout <<"遅刻しそうです!"<< endl;
     };
     return 0;
   };
@@ -80,10 +79,10 @@ int main() {
     int hour;
     int minutes;
 
-    std::cout << "何時？" << std::endl;
-    std::cin >> hour;
-    std::cout << "何分？" << std::endl;
-    std::cin >> minutes;
+    cout << "何時？" << endl;
+    cin >> hour;
+    cout << "何分？" << endl;
+    cin >> minutes;
 
     getFirstExpress(hour, minutes);
     return 0;

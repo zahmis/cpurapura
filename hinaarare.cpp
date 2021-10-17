@@ -18,7 +18,7 @@ int main(){
 
     for (int i=0; i<N; i++)
     {
-        cin>>S;
+        cin>>S; 
         if(S == "Y"){
             cout << "Four"<< endl;
             return 0;

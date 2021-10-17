@@ -1,4 +1,7 @@
 {
     // "C_Cpp.errorSquiggles": "Disabled"
     // "C_Cpp.errorSquiggles": "Disabled"
+    "clang-format.executable": "/usr/local/bin/clang-format",
+    "C_Cpp.clang_format_style": "{ BasedOnStyle: LLVM, BreakBeforeBraces: Attach, SpaceBeforeParens: Never, IndentWidth: 2, AllowShortBlocksOnASingleLine: true, AllowShortIfStatementsOnASingleLine: true }",
+    "editor.formatOnSave": true
 }

@@ -24,14 +24,14 @@ int main() {
   string text;
   // パターン2
   if (p == 2) {
-  cin >> text;
-  cin >> price;
+    cin >> text;
+    cin >> price;
   }
 
   int N;
   cin >> N;
 
-  if(p == 2){
+  if (p == 2) {
     cout << text << "!" << endl;
   }
   cout << price * N << endl;

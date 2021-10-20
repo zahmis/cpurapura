@@ -3,7 +3,7 @@
 using namespace std;
 
 int main() {
-  char N, M;  // N人参加　M回し合いが行われる
+  int N, M;  // N人参加　M回し合いが行われる
   cin >> N >> M;
   vector<int> A(M), B(M);
   for (int i = 0; i < M; i++) {

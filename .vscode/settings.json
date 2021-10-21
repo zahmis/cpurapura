@@ -4,6 +4,5 @@
     "C_Cpp.clang_format_style": "{ BasedOnStyle: LLVM, BreakBeforeBraces: Attach, SpaceBeforeParens: Never, IndentWidth: 2, AllowShortBlocksOnASingleLine: true, AllowShortIfStatementsOnASingleLine: true }",
     "editor.formatOnSave": true,
     "files.associations": {
-        "ostream": "cpp"
     }
 }

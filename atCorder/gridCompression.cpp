@@ -54,9 +54,6 @@ int main() {
   for (int i = 0; i < h; i++) {
     cin >> a[i];  // line の全て入れるのか
   }
-
-  // ただの配列に全ての情報を入れている？
-  // cout してみるか
   // 入力は
   // 4 4
   // ##.#　[i,j] = [0,0][0,1][0,3]
@@ -74,16 +71,18 @@ int main() {
   for (int i = 0; i < h; i++) {
     for (int j = 0; j < w; j++) {
       if (a[i][j] == '#') {
-        row[i] = true;  // [0,2,3]
-        col[j] = true;  // [0,1,2,3]
+        row[i] = true;  // [0,2,3] 行に対して一つでも # があれば true
+        col[j] = true;  // [0,1,2,3] 同じく 列に対して　つまり. のみを燻り出す
       }
     }
   }
 
   for (int i = 0; i < h; i++) {
-    if (row[i]) {  //まず列を見て # を見つける [true, false, true, false]
+    if (row[i]) {  //まず列を見て # を見つける [true, false, true, true]
+                   // 2行目だけ false なのでその行を除去できる
       for (int j = 0; j < w; j++) {
-        if (col[j]) {  // [true, true, false, true]
+        if (col[j]) {  // 行を見て # を見つける [true, true, false, true]
+                       // 3行目だけ false
           cout << a[i][j];
         }
       }

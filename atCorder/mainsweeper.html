@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>マインスイーパ</title>
+  <script language="javascript" type="text/javascript">
+
+    var arrey = new Array(12) ;
+      for (let j = 0 ; j < 12 ; j++)
+      {
+        arrey[j] = new Array(12).fill(0) ;
+      }
+    function start(arrey)
+    {
+      let arrey1 = initial(arrey) ;
+      putchar(arrey1) ;
+    }
+      
+    function initial(arrey)
+    {
+       for (let j = 0 ; j < 12 ; j++)
+      {
+        arrey[j] = new Array(12).fill(0) ;
+      }
+      let i = 0 ;
+      while(i < 15)
+      {
+        let spn =1 + parseInt(10*Math.random()) ;
+        let rw =1 + parseInt(10*Math.random());   
+
+        if ( arrey[spn][rw]==0)
+        {
+          arrey[spn][rw] = 10 ;
+          i++ ;
+        }
+      }
+      for (let x = 1 ; x < 11 ; x++)
+      {
+        for(let y = 1 ; y < 11 ; y++)
+        {
+          if(arrey[x][y] != 10)
+          {
+            i = 0 ;
+            for(let z = 0 ; z < 3 ; z++)
+            {
+              for(let w = 0 ; w < 3 ; w++)
+              {
+                i += parseInt(arrey[x + z -1][y + w - 1]/10) ;
+              }
+            }
+            arrey[x][y] = i ;
+          }
+        }
+      }
+      return arrey ;
+    }
+    
+    function putchar(arrey)
+    {
+      for (let i = 0 ; i < 10 ; i++)
+      {
+        for (let j = 0 ; j < 10 ; j++ )
+        {
+          document.getElementById(i + "cell" + j).style.backgroundColor = "gray";
+          document.getElementById( i + "cell" + j ).innerText = "" ;
+          document.getElementById( i + "cell" + j ).style.color = "gray" ;
+        }
+      }
+	}
+
+    function gtid(obj) 
+    {
+      obj.style.backgroundColor = 'white';
+      let hoge = obj.id ;
+      let huga = hoge.split('cell');
+      let i = parseInt(huga[0]) + 1 ;
+      let j = parseInt(huga[1]) + 1;
+      if (0 < arrey[i][j] && arrey[i][j] < 10 )
+      {
+        document.getElementById(hoge).innerText = arrey[i][j] ;
+        bomb(huga , arrey) ;
+      }
+      else if (arrey[i][j] == 10)
+      {
+        for (let x = 1 ; x < 11 ; x++)
+        {
+          for (let y = 1 ; y < 11 ; y++ )
+          {
+            document.getElementById((x - 1) + "cell" + (y - 1)).style.backgroundColor = "white";
+            if (arrey[x][y] == 10)
+            {
+              document.getElementById((x - 1) + "cell" + (y - 1)).innerText = "★" ;
+              document.getElementById((x - 1) + "cell" + (y - 1)).style.color = "red" ;
+            }
+            else if(arrey[x][y] != 0)
+            {   
+              document.getElementById((x - 1) + "cell" + (y - 1)).innerText = arrey[x][y] ;
+            }
+          }
+        }
+        alert("ゲームオーバ") ;
+      }
+      return huga ;
+    }
+    function bomb(huga , arrey )
+    {
+      
+    }
+  </script>
+</head>
+<body>
+  <table border = "1" id = "mine">
+    <script language="javascript" type="text/javascript">
+   
+      for (let i = 0 ; i < 10 ; i++ )
+      {
+        document.write('<tr>') ;
+      
+        for (let j = 0 ; j < 10 ; j++)
+        {
+           hoge =i + "cell" + j ;
+          document.write('<td id =' + hoge + ' onclick = "gtid(this)"></td>') ;
+        }
+        document.write('</tr>') ;
+      }
+        
+    </script>
+    <style type="text/css">
+      td
+      {
+        width: 40px;
+        height: 40px;
+        text-align: center;
+        background-color : gray ;
+        color : gray ;
+      }
+    </style>
+  </table>
+  <button id="main" onclick = "start(arrey)">スタート</button>
+</body>
+</html>

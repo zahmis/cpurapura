@@ -47,21 +47,21 @@ using namespace std;
 typedef long long ll;
 signed main() {
   ll n;
-  cin >> n;                 // 5
-  vector<ll> count(n + 1);  //各頂点の次数を数える count 配列 6 ?
+  cin >> n;                // 5
+  vector<ll> count(n + 1); //各頂点の次数を数える count 配列 6 ?
 
   for (ll i = 1; i <= n - 1; i++) {
     ll a, b;
-    cin >> a >> b;  // 1 4
-    count[a]++;  // count[a] = count[a] + 1 これは count[1] に値を入れている
-    count[b]++;  // count[b] = count[b] +　1
-                 // これによってどちらにきてもカウントできる
+    cin >> a >> b; // 1 4
+    count[a]++; // count[a] = count[a] + 1 これは count[1] に値を入れている
+    count[b]++; // count[b] = count[b] +　1
+                // これによってどちらにきてもカウントできる
   }
 
   for (ll i = 1; i <= n; i++) {
-    if (count[i] == n - 1) {  // カウント配列を最初からチェックしていく
+    if (count[i] == n - 1) { // カウント配列を最初からチェックしていく
       cout << "Yes" << endl;
-      return 0;  //プログラムを終了する
+      return 0; //プログラムを終了する
     }
   }
   cout << "No" << endl;

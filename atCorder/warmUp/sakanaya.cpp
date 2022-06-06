@@ -7,12 +7,14 @@ int main() {
   int H, W;
   cin >> H, W;
 
-  vector<vector<char> > board(H, vector<char>(W));
+  vector<vector<char>> board(H, vector<char>(W));
 
   void search(int x, int y) {
-    if (x < 0 || W <= x || y < 0 || H <= y || borad[x][y] == '#') return;
+    if (x < 0 || W <= x || y < 0 || H <= y || borad[x][y] == '#')
+      return;
 
-    if (board[x][y]) return;
+    if (board[x][y])
+      return;
     if (board[x][y] == 'g') {
       cout << "Yes" << endl;
       return;

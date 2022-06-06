@@ -32,12 +32,12 @@ int main() {
     while (true) {
       bool isOdd = false;
       for (int i = 0; i < N; i++) {
-        if (A[i] % 2 != 0) isOdd = true
+        if (A[i] % 2 != 0)
+          isOdd = true
       }
     }
-    if (isOdd) break for (int i = 0; i < N; ++i) {
-        A[i] /= 2;
-      }
+    if (isOdd)
+      break for (int i = 0; i < N; ++i) { A[i] /= 2; }
     ++response;
   }
 }

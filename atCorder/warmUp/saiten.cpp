@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void saiten(vector<vector<int> > &A, int &correct_count, int &wrong_count) {
+void saiten(vector<vector<int>> &A, int &correct_count, int &wrong_count) {
   for (int i = 0; i < 9; i++) {
     for (int j = 0; j < 9; j++) {
       if (A[i][j] != (i + 1) * (j + 1)) {
@@ -15,7 +15,7 @@ void saiten(vector<vector<int> > &A, int &correct_count, int &wrong_count) {
 }
 
 int main() {
-  vector<vector<int> > A(9, vector<int>(9));
+  vector<vector<int>> A(9, vector<int>(9));
   for (int i = 0; i < 9; i++) {
     for (int j = 0; j < 9; j++) {
       cin >> A.at(i).at(j);

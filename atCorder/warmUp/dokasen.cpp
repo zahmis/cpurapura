@@ -5,7 +5,7 @@ using namespace std;
 int main() {
   int N;
   cin >> N;
-  vector<double> A(N), B(N);  // A(N) 長さの配列, B(N) 早さの配列
+  vector<double> A(N), B(N); // A(N) 長さの配列, B(N) 早さの配列
 
   for (int i = 0; i < N; i++) {
     cin >> A[i] >> B[i];
@@ -15,7 +15,7 @@ int main() {
   for (int i = 0; i < N; i++) {
     t = t + A[i] / B[i];
   };
-  t = t / 2;  // 総合時間を 2 でわって片道の時間計算
+  t = t / 2; // 総合時間を 2 でわって片道の時間計算
   for (int i = 0; i < N; i++) {
     //本来の長さ or 時間経過した長さ どちらか小さい方を返す
     ans = ans + min(A[i], t * B[i]);

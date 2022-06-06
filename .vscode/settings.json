@@ -3,6 +3,7 @@
   "clang-format.executable": "/usr/local/bin/clang-format",
   "C_Cpp.clang_format_style": "{ BasedOnStyle: LLVM, BreakBeforeBraces: Attach, SpaceBeforeParens: Never, IndentWidth: 2, AllowShortBlocksOnASingleLine: true, AllowShortIfStatementsOnASingleLine: true }",
   "editor.formatOnSave": true,
+  "editor.formatOnType": true,
   "files.associations": {
     "ostream": "cpp",
     "vector": "cpp",

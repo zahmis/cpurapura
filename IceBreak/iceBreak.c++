@@ -1,59 +1,54 @@
-# include <iostream>
-# include <stdio.h>
+#include <iostream>
+#include <stdio.h>
 
 // ポインタにはアドレスしか渡せない;
 // * をつけてその先の値を取得する;
-int calc(int *x){
-    *x = 25;
-    return 0;
+int calc(int *x) {
+  *x = 25;
+  return 0;
 };
 
-void calcSecond(int n1, int n2, int *plus, int *minus){
-    *plus = n1 + n2;
-    *minus = n1 - n2;
+void calcSecond(int n1, int n2, int *plus, int *minus) {
+  *plus = n1 + n2;
+  *minus = n1 - n2;
 };
-struct Fruits{
-     char name[10];
-     int price;
-     int stock;   
-    };
+struct Fruits {
+  char name[10];
+  int price;
+  int stock;
+};
 
-int main (){
-    printf("関数を使って出力\n");
-    
-    std::cout << "Hello, World!" << std::endl;
+int main() {
+  printf("関数を使って出力\n");
 
-    int apple = 20;
-    
-    // 参照渡し　
-    calc(&apple);
-    printf("%d\n", apple);
+  std::cout << "Hello, World!" << std::endl;
 
+  int apple = 20;
 
-    int num1 = 10;
-    int num2 = 20;
-    int plus = 0;
-    int minus = 0;
-    calcSecond(num1, num2, &plus, &minus);
+  // 参照渡し　
+  calc(&apple);
+  printf("%d\n", apple);
 
-    printf("%d\n", plus);
-    printf("%d\n", minus);
+  int num1 = 10;
+  int num2 = 20;
+  int plus = 0;
+  int minus = 0;
+  calcSecond(num1, num2, &plus, &minus);
 
-    struct Fruits waiStore = {"りんご", 100, 10};
+  printf("%d\n", plus);
+  printf("%d\n", minus);
 
-    // ポインタ作成
-    struct Fruits *p;
+  struct Fruits waiStore = {"りんご", 100, 10};
 
-    // 参照渡し
-    p = &waiStore;
+  // ポインタ作成
+  struct Fruits *p;
 
-    printf("%s\n", p->name);
-    printf("%d\n", p->price);
-    printf("%d\n", p->stock);
+  // 参照渡し
+  p = &waiStore;
 
-  
+  printf("%s\n", p->name);
+  printf("%d\n", p->price);
+  printf("%d\n", p->stock);
 
-    return 0;
+  return 0;
 }
-
-

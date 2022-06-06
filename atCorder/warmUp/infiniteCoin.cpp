@@ -7,8 +7,8 @@ using namespace std;
 int main() {
   int N;
   int A;
-  cin >> N;  // 2018 などの総額
-  cin >> A;  // 218 一円玉の枚数
+  cin >> N; // 2018 などの総額
+  cin >> A; // 218 一円玉の枚数
 
   int amari = N % 500;
   if (amari <= A) {

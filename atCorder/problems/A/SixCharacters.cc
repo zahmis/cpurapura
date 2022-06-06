@@ -1,20 +1,20 @@
 #include <iostream>
 using namespace std;
 
-int main(){
+int main()
+{
     string s;
     cin >> s;
 
-　　// s.size() でも良い
-    const int length = s.length();
-    
+    　　 // s.size() でも良い
+        const int length
+        = s.length();
 
-    if(length == 1){
+    if (length == 1) {
         cout << s + s + s + s + s + s << endl;
-    }else if(length == 2){
+    } else if (length == 2) {
         cout << s + s + s << endl;
-    }
-    else {
+    } else {
         cout << s + s << endl;
     }
 

@@ -9,7 +9,8 @@
     "vector": "cpp",
     "iosfwd": "cpp",
     "iterator": "cpp",
-    "iostream": "cpp"
+    "iostream": "cpp",
+    "string": "cpp"
   },
   "C_Cpp.errorSquiggles": "Disabled"
 }

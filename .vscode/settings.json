@@ -10,7 +10,24 @@
     "iosfwd": "cpp",
     "iterator": "cpp",
     "iostream": "cpp",
-    "string": "cpp"
+    "string": "cpp",
+    "array": "cpp",
+    "deque": "cpp",
+    "map": "cpp",
+    "string_view": "cpp",
+    "unordered_map": "cpp",
+    "__bit_reference": "cpp",
+    "__hash_table": "cpp",
+    "__split_buffer": "cpp",
+    "__tree": "cpp",
+    "filesystem": "cpp",
+    "forward_list": "cpp",
+    "initializer_list": "cpp",
+    "list": "cpp",
+    "regex": "cpp",
+    "set": "cpp",
+    "unordered_set": "cpp",
+    "valarray": "cpp"
   },
   "C_Cpp.errorSquiggles": "Disabled"
 }

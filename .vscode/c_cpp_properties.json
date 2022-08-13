@@ -1,16 +1,13 @@
 {
-    "configurations": [
-        {
-            "name": "Mac",
-            "includePath": [
-                "${default}",
-                "/usr/local/include/"
-        ],
-            "compilerPath": "/usr/bin/clang",
-            "cStandard": "c17",
-            "cppStandard": "c++98",
-            "intelliSenseMode": "macos-clang-x64"
-        }
-    ],
-    "version": 4
+  "configurations": [
+    {
+      "name": "Mac",
+      "includePath": ["${default}", "/usr/local/include/"],
+      "compilerPath": "/usr/bin/clang",
+      "cStandard": "c17",
+      "cppStandard": "c++98",
+      "intelliSenseMode": "macos-clang-x64"
+    }
+  ],
+  "version": 4
 }

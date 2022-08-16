@@ -1,38 +1,38 @@
-#define _GLIBCXX_DEBUG
-#include <bits/stdc++.h>
+#include <iostream>
+#include <string>
+#include <vector>
 using namespace std;
 
-string board[110];
-bool   goodX[110];
-bool   goodY[110];
-
 int main() {
-    int X, Y;
-    cin >> X >> Y;
-
-    for (int i = 0; i < Y; i++) {
-        cin >> board[i];
+    int h;
+    cin >> h;
+    int w;
+    cin >> w;
+    vector<string> a(h);
+    for (int i = 0; i < h; i++) {
+        cin >> a[i];
     }
 
-    for (int i = 0; i < Y; i++) {
-        for (int j = 0; j < X; j++) {
-            if (board[i][j] == '#') {
-                goodX[j] = true;
-                goodY[i] = true;
+    vector<bool> row(h, false);
+    vector<bool> col(w, false);
+    for (int i = 0; i < h; i++) {
+        for (int j = 0; j < w; j++) {
+            if (a[i][j] == '#') {
+                row[i] = true;    //列を true にしてる
+                col[j] = true;    // 行を true にしてる
             }
         }
     }
 
-    for (int i = 0; i < X; i++) {
-        if (goodX[i]) {
-            for (int j = 0; j < Y; j++) {
-                if (goodY[j]) {
-                    cout << board[i][j] << endl;
-                    return 0;
+      for (int i = 0; i < h; i++) {
+        if (row[i]) {
+            for (int j = 0; j < w; j++) {
+
+                if (col[j]) {
+                    cout << a[i][j];
                 }
             }
+            cout << endl;
         }
     }
-
-    return 0;
-};
+}
